@@ -44,6 +44,9 @@ Route::get('/exhibition/json', function () {
 
 Route::get('/frameworks/json', function () {
     return view('examples.frameworks_js')->with([
-
     ]);
+});
+
+Route::get('/comments', function (){
+    return view('examples.comments');
 });
