@@ -57,3 +57,9 @@ Route::get('/conditionals', function () {
         'test' => -15
     ]);
 });
+
+Route::get('/switch', function () {
+    return view('examples.conditionals_switch', [
+        'month' => rand(1, 20)
+    ]);
+});
