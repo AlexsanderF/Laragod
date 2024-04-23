@@ -53,6 +53,7 @@ Route::get('/comments', function () {
 
 Route::get('/conditionals', function () {
     return view('examples.conditionals', [
-        'comments' => -3
+        'comments' => -3,
+        'test' => -15
     ]);
 });

@@ -10,3 +10,9 @@
 @else
     <h1>Não existe um comentário</h1>
 @endif
+
+<hr>
+
+@unless($test > 0)
+    <h1>Valor é diferente da condição, ou seja {{$test}}</h1>
+@endunless
