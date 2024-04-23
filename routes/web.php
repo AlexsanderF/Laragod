@@ -47,6 +47,12 @@ Route::get('/frameworks/json', function () {
     ]);
 });
 
-Route::get('/comments', function (){
+Route::get('/comments', function () {
     return view('examples.comments');
+});
+
+Route::get('/conditionals', function () {
+    return view('examples.conditionals', [
+        'comments' => -3
+    ]);
 });
