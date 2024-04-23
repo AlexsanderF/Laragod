@@ -6,9 +6,31 @@ use App\Http\Controllers\VerServico;
 use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'projects' => [
+            [
+                'image' => 'cabin.png'
+            ],
+            [
+                'image' => 'cake.png'
+            ],
+            [
+                'image' => 'circus.png'
+            ],
+            [
+                'image' => 'game.png'
+            ],
+            [
+                'image' => 'safe.png'
+            ],
+            [
+                'image' => 'submarine.png'
+            ]
+        ]
+    ]);
 });
 
 Route::get('/home', [SiteController::class, 'home']);
