@@ -29,13 +29,24 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+            @php
+                $items_Menu = [
+                        [
+                        'description' => 'Portfólio',
+                        'link' => '#portfolio'
+                        ],
+                        [
+                        'description' => 'Sobre',
+                        'link' => '#about'
+                        ],
+                        [
+                        'description' => 'Contato',
+                        'link' => '#contact'
+                        ]
+                        ];
+            @endphp
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                                                     href="#contact">Contact</a></li>
+                @each('subcomponents._items_menu', $items_Menu, 'items')
             </ul>
         </div>
     </div>
@@ -86,7 +97,7 @@
             @empty
                 <h1>Nenhum projeto encontrado! D:</h1>
             @endforelse
-            @include('subcomponents._pagination')
+            @includeWhen($pagination, 'subcomponents._pagination')
         </div>
     </div>
 </section>

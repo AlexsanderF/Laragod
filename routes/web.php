@@ -10,6 +10,7 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 Route::get('/', function () {
     return view('welcome', [
+        'pagination' => true,
         'projects' => [
             [
                 'active' => true,
