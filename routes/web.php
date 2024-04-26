@@ -1,12 +1,24 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\SiteComponentController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SiteInheritanceController;
 use App\Http\Controllers\VerServico;
 use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
+
+Route::get('/site/inheritance/', [SiteInheritanceController::class, 'home'])->name('site.inheritance');
+Route::get('/site/inheritance/portfolio', [SiteInheritanceController::class, 'portfolio'])->name('site.inheritance.portfolio');
+Route::get('/site/inheritance/sobre', [SiteInheritanceController::class, 'about'])->name('site.inheritance.about');
+Route::get('/site/inheritance/contato', [SiteInheritanceController::class, 'contact'])->name('site.inheritance.contact');
+
+Route::get('/site/component/', [SiteComponentController::class, 'home'])->name('site.component');
+Route::get('/site/component/portfolio', [SiteComponentController::class, 'portfolio'])->name('site.component.portfolio');
+Route::get('/site/component/sobre', [SiteComponentController::class, 'about'])->name('site.component.about');
+Route::get('/site/component/contato', [SiteComponentController::class, 'contact'])->name('site.component.contact');
 
 Route::get('/', function () {
     return view('welcome', [
